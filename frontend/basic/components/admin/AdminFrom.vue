@@ -48,21 +48,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
       from: {
-        name: '',
-        content: '',
-        image: '',
+        name: 'เกาะมุก ตรัง',
+        content:
+          'เกาะมุก ได้ชื่อว่า “ถ้ำมรกตอันล้ำค่าแห่งอันดามัน” เป็นเกาะที่ใหญ่เป็นอันดับที่ 3 ของท้องทะเลตรังเลยทีเดียว',
+        image:
+          'https://cms.dmpcdn.com/travel/2017/08/03/b831d834-c87d-46d8-9b45-672dca0e8df2.jpg',
         author: '',
       },
     }
   },
   methods: {
-    onSubmit(evt) {
+    async onSubmit(evt) {
       evt.preventDefault()
-      console.log(this.from)
+      let req = {
+        title: this.from.name,
+        content: this.from.content,
+        image: this.from.image,
+        author: this.from.author,
+      }
+      let res = await axios.post('http://localhost:9000/addProduct', req)
+      console.log(res)
+      this.onReset(evt)
     },
     onReset(evt) {
       evt.preventDefault()

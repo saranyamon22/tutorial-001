@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/saranyamon22/tutorial-001/issues"
   },
-  "homepage": "https://github.com/saranyamon22/tutorial-001#readme"
+  "homepage": "https://github.com/saranyamon22/tutorial-001#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "nodemon": "^2.0.15"
+  }
 }

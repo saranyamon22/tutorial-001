@@ -1,10 +1,12 @@
 const express = require("express");
+var cors = require('cors');
 const app = express()
+app.use(cors());
 app.use(express.json())
 
 const mongoose = require('mongoose');
 const Product = require('./models/product')
-mongoose.connect('mongodb://localhost:27017/tutorial', { useNewUrlParser: true }).then(() => {
+mongoose.connect('mongodb://localhost:27017/Travel', { useNewUrlParser: true }).then(() => {
     console.log("connect success")
 })
 
